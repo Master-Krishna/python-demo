@@ -29,3 +29,36 @@ my future goal is to be ai engineer
 # a = True
 # a = False
 # print(type(a))
+
+"""STRING"""
+
+# a = "A"
+# print(ord(a))
+
+# a = 67
+# print(chr(a))
+
+# a = "sher"
+# print(a[-1],a[3])
+
+# a = "krishna shekhawat"
+# print(a[0:7:2])
+# print(a[::-1])
+
+"""type conversion"""
+
+# a = 12
+
+# a = str(a)
+
+# print(type(a))
+
+# a = []
+
+# print(type(bool(a)))
+# print(bool(a))
+
+# a = 12
+# print(type(a/3))
+# print(type(a//3))
+
