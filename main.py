@@ -62,3 +62,23 @@ my future goal is to be ai engineer
 # print(type(a/3))
 # print(type(a//3))
 
+"""input and output"""
+
+# name = "krishna"
+# age = 12
+
+# # print(name,age)
+
+# print("hello my name is",name,"and my age is",age)
+
+# print(f"hello my name is {name} and my age is {age}")
+
+
+# age = int(input("what is your age?"))
+# print(type(age))
+# print(age)
+
+name = input("Enter your name:- ")
+age = int(input("Enter your age:- "))
+
+print(f"your name is {name} and your age is {age}")
