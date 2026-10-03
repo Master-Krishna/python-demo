@@ -9,14 +9,23 @@ def emoplyee_analysis(records,criteria):
                 output += [x[0]]
         return output
 
-    if criteria == "department_salary":
+    elif criteria == "department_salary":
         for x in records:
             if x[1] not in dict:
                 dict[x[1]] = x[2]
             else:
                 dict[x[1]] += x[2]
 
-    return dict
+        return dict
 
+    elif criteria == "consistent":
+        for x in records:
+            for i in x[-1]:
+                if i >= 7:
+                    output += [x[0]]
 
-            
+        return output
+
+    elif criteria == "top_employee":
+       pass
+
