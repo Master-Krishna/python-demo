@@ -1,6 +1,8 @@
 def emoplyee_analysis(records,criteria):
     output = []
     dict = {}
+    max = 0
+    name = []
 
     if criteria == "high_performers":
         for x in records:
@@ -27,5 +29,23 @@ def emoplyee_analysis(records,criteria):
         return output
 
     elif criteria == "top_employee":
-       pass
+        for x in records:
+            avg = sum(x[-1])/len(x[-1])
+            if x[0] not  in dict:
+                dict[x[0]] = avg
+           
+        for i,x in dict.items():
+            if x > max:
+                max = x
+                name += [i]
 
+        return sorted(dict,key=lambda x:dict[x],reverse=True)[0]
+
+records = [
+    ("Amit", "IT", 50000, [8, 9, 7]),
+    ("Riya", "HR", 45000, [9, 9, 8]),
+    ("Karan", "IT", 60000, [6, 8, 7]),
+    ("Neha", "HR", 55000, [10, 9, 9])
+]
+
+print(emoplyee_analysis(records,"top_employee"))
