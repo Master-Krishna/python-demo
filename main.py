@@ -1,25 +1,50 @@
 import random
 
 
-class Bank:
-    Database = "data.json"
-    Data = []
 
-    try:
-        with open(Database,"a") as fs:
-            rec = fs.write(Data)
-    except Exception as err:
-        print(f"An error occurred as {err}")
+class Bank:
+    
 
 
 
 
     def createaccount(self):
-        name = input("Enter your full name here:- ")
-        age = int(input("Enter your age here:- "))
-        accountno = random.randint(0,5000,4)
-        PIN = int(input("Enter your PIN here:- "))
+        self.name = input("Enter your full name here:- ")
+        self.age = int(input("Enter your age here:- "))
+        self.accountno = random.randint(4000,5000)
+        self.PIN = int(input("Enter your PIN here (4 digit PIN):- "))
+        if len(str(self.PIN)) != 4:
+            print("Please try again...")
+            self.PIN = int(input("Enter your PIN here (4 digit PIN):- "))
+        else:
+            print("PIN length is correct")
+
+        if self.age < 18:
+            return "You are not able to create account because you are below 18...."
+        else:
+            print("You are able to create your account...verified")
+
+            print(f"Here is your account number please note that - ACCOUNTNO : {self.accountno}")
+
+    
+    def __update(self):
+        Database = "data.json"
+        Data = [
+            {
+                "NAME" : self.name,
+                "AGE" : self.age,
+                "ACCOUNTNO" : self.accountno,
+                "PIN" : self.PIN
+            }
+        ]
         
+        try:
+            with open(Database,"a") as fs:
+                rec = fs.write(Data)
+        except Exception as err:
+            print(f"An error occurred as {err}")
+
+
 
 
         
