@@ -3,7 +3,22 @@ import random
 
 
 class Bank:
-    
+    def __update(self):
+        Database = "data.json"
+        Data = [
+            {
+                "NAME" : self.name,
+                "AGE" : self.age,
+                "ACCOUNTNO" : self.accountno,
+                "PIN" : self.PIN
+            }
+        ]
+            
+        try:
+            with open(Database,"a") as fs:
+                fs.write(Data)
+        except Exception as err:
+            print(f"An error occurred as {err}")
 
 
 
@@ -25,24 +40,6 @@ class Bank:
             print("You are able to create your account...verified")
 
             print(f"Here is your account number please note that - ACCOUNTNO : {self.accountno}")
-
-    
-    def __update(self):
-        Database = "data.json"
-        Data = [
-            {
-                "NAME" : self.name,
-                "AGE" : self.age,
-                "ACCOUNTNO" : self.accountno,
-                "PIN" : self.PIN
-            }
-        ]
-        
-        try:
-            with open(Database,"a") as fs:
-                rec = fs.write(Data)
-        except Exception as err:
-            print(f"An error occurred as {err}")
 
 
 
